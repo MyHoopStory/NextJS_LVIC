@@ -18,7 +18,11 @@ console.error('Unable to connect to the database:', err);
 
 });
 const IntegrationProject = sequelize.define('IntegrationProject', {
-    // Define your model attributes here
+    id: {
+        type: Sequelize.INTEGER,
+        primaryKey: true,
+        autoIncrement: true,
+      },
     siteName: Sequelize.STRING,
     street: Sequelize.STRING,
     city: Sequelize.STRING,
