@@ -1,10 +1,20 @@
 const express = require('express')
+const cors = require('cors');
+
 const { sequelize, IntegrationProject } = require('./models/integration'); 
 
 const app = express()
 
 const port = 3000
 
+const corsOptions = {
+  origin: 'http://localhost:3001',
+  methods: 'GET,HEAD,PUT,PATCH,POST,DELETE',
+  credentials: true, // Enable credentials (cookies, authorization headers, etc.)
+  optionsSuccessStatus: 204,
+};
+
+app.use(cors(corsOptions));
 app.use(express.json());
 
 // Route to handle adding a new entry
