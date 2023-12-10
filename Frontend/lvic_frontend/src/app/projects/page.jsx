@@ -7,7 +7,7 @@ const Projects = () => {
   const [projects, setProjects] = useState([]);
 
   useEffect(() => {
-    axios.get('http://localhost:3000/api/projects')
+    axios.get('http://localhost:3080/api/projects')
       .then((response) => {
         setProjects(response.data.projects);
       })
@@ -33,8 +33,12 @@ const Projects = () => {
       <h1>Projects</h1>
       {projects.map((project) => (
         <div key={project.id}>
-          <h3>{project.siteName}</h3>
-          {/* Render other project details */}
+          <ul><h3>{project.siteName}</h3></ul>
+            <li><h5>Address</h5></li>
+            <li>{project.street}</li>
+            <li>{project.city}</li>
+            <li>{project.state}</li>
+            <li>{project.zipCode}</li>
         </div>
       ))}
     </div>

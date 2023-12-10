@@ -5,10 +5,10 @@ const { sequelize, IntegrationProject } = require('./models/integration');
 
 const app = express()
 
-const port = 3000
+const port = 3080
 
 const corsOptions = {
-  origin: 'http://localhost:3001',
+  origin: 'http://localhost:3000',
   methods: 'GET,HEAD,PUT,PATCH,POST,DELETE',
   credentials: true, // Enable credentials (cookies, authorization headers, etc.)
   optionsSuccessStatus: 204,
