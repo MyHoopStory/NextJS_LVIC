@@ -21,7 +21,7 @@ export default function NewProject (){
         /* "handleSubmit" will validate your inputs before invoking "onSubmit" */
         <form onSubmit={handleSubmit(onSubmit)}>
           {/* register your input into the hook by invoking the "register" function */}
-          <input defaultValue="test" {...register("siteName")} />
+          <input {...register("siteName")} />
     
           {/* include validation with required or other standard HTML validation rules */}
           <input {...register("exampleRequired", { required: true })} />
